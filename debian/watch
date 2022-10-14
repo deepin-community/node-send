@@ -1,0 +1,10 @@
+version=4
+opts=filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-send-$1.tar.gz/ \
+https://github.com/visionmedia/send/tags .*/archive/.*/v?([\d\.]+).tar.gz	
+
+opts=\
+ctype=nodejs,\
+component=destroy,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-destroy-$1.tar.gz/ \
+ https://github.com/stream-utils/destroy/tags .*/archive/.*/v?([\d\.]+).tar.gz ignore

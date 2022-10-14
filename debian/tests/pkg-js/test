@@ -1,0 +1,1 @@
+mocha -C --check-leaks --reporter spec --bail

@@ -1,0 +1,19 @@
+Description: Module ms is included in node-debug, use it.
+Author: Leo Iannacone <l3on@ubuntu.com>
+Forwarded: not-needed
+Reviewed-By: Xavier Guimard <yadd@debian.org>
+Last-Update: 2019-12-21
+
+--- a/index.js
++++ b/index.js
+@@ -21,8 +21,8 @@
+ var etag = require('etag')
+ var fresh = require('fresh')
+ var fs = require('fs')
+-var mime = require('mime')
+-var ms = require('ms')
++var mime = require('mime-types')
++var ms = require('debug').humanize;
+ var onFinished = require('on-finished')
+ var parseRange = require('range-parser')
+ var path = require('path')

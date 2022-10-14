@@ -1,0 +1,51 @@
+Source: node-send
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Jérémy Lal <kapouer@melix.org>,
+           Yadd <yadd@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-buildinfo,
+               nodejs,
+               node-after,
+               node-debug,
+               node-depd,
+               node-encodeurl,
+               node-escape-html,
+               node-etag,
+               node-fresh,
+               node-http-errors,
+               node-mime-types,
+               node-on-finished,
+               node-range-parser (>= 1.2.0),
+               mocha,
+               node-should,
+               node-supertest (>= 4.0.2),
+               dh-sequence-nodejs
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-send
+Vcs-Git: https://salsa.debian.org/js-team/node-send.git
+Homepage: https://github.com/pillarjs/send
+Rules-Requires-Root: no
+
+Package: node-send
+Architecture: all
+Depends: ${misc:Depends},
+         nodejs,
+         node-debug,
+         node-depd,
+         node-encodeurl,
+         node-escape-html,
+         node-etag,
+         node-fresh,
+         node-http-errors,
+         node-mime-types,
+         node-on-finished,
+         node-range-parser (>= 1.2.0)
+Description: Static file server with ranges and negotiation support for Node.js
+ This module offers a streaming static file server supporting partial
+ responses (Ranges), conditional-GET negotiation, high test coverage,
+ and granular events allowing middlewares to plug easily into it.
+ .
+ Node.js is an event-based server-side javascript engine.

@@ -1,0 +1,115 @@
+node-send (0.17.1-3) unstable; urgency=medium
+
+  [ lintian-brush ]
+  * Set upstream metadata fields: Bug-Submit
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright)
+  * Update standards version to 4.6.0, no changes needed.
+
+  [ Yadd ]
+  * Bump debhelper compatibility level to 13
+  * Modernize debian/watch
+  * Add ctype=nodejs to component(s)
+  * Fix GitHub tags regex
+  * Use dh-sequence-nodejs
+  * Uploaders: replace Leo Iannacone by myself, thanks for your work!
+
+ -- Yadd <yadd@debian.org>  Mon, 11 Oct 2021 09:05:47 +0200
+
+node-send (0.17.1-2) unstable; urgency=medium
+
+  * Team upload
+  * Require node-supertest ≥ 4.0.2 (fixes debci)
+  * Refresh patches
+
+ -- Xavier Guimard <yadd@debian.org>  Sat, 21 Dec 2019 12:58:15 +0100
+
+node-send (0.17.1-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.4.1
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * New upstream version 0.17.1
+  * Embed destroy
+  * Refresh patches
+  * Update debian/copyright
+  * Switch test and install to pkg-js-tools
+  * Switch to debhelper-compat
+
+ -- Xavier Guimard <yadd@debian.org>  Thu, 07 Nov 2019 21:58:38 +0100
+
+node-send (0.16.2-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Leo Iannacone ]
+  * Add patch to replace 'ms' call by node-debug (Closes: #882963)
+
+  [ Jérémy Lal ]
+  * Replace node-mime by node-mimetypes (patch mime2-compat.patch)
+    Closes: #902508
+  * Honor nocheck in debian/rules
+
+  [ Xavier Guimard ]
+  * New upstream version 0.16.2
+  * Change section to javascript
+  * Bump debhelper compatibility level to 12
+  * Declare compliance with policy 4.3.0
+  * Update debian/copyright
+  * Refresh patches
+  * Add node-after, node-encodeurl, node-http-errors in build dependencies
+  * Add upstream/metadata
+  * Update homepage
+  * Fix names of markdown files to install
+  * Remove Testsuite header
+  * Add patch to disable one failing test
+  * Enable mocha test in autopkgtest files
+
+ -- Xavier Guimard <yadd@debian.org>  Thu, 24 Jan 2019 09:34:24 +0100
+
+node-send (0.9.4-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.9.4
+  * Bump Standards-Version 3.9.6
+  * Bundle destroy as a patch: it only reverse-depends on this,
+    no need to have it packaged
+  * debian/copyright:
+    - add new author
+    - update Upstream-Contact to /issues
+    - add destroy modules entry
+  * debian/install:
+    - do not install lib, since is no longer shipped
+    - install destroy module as submodule
+  * debian/examples: removed, no example is longer shipped
+  * debian/control:
+    - update dependencies
+    - add buiilddeps to run tests
+  * debian/rules: run tests
+  * 0001-use_ms_from_debug: module ms is included in
+    node-debug package, use it.
+  * Add autopkgtest suite
+
+ -- Leo Iannacone <l3on@ubuntu.com>  Mon, 13 Oct 2014 18:19:52 +0200
+
+node-send (0.3.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/rules:
+    + install upstream changelog
+    + disabled override for build and test since they are never called
+  * debian/copyright:
+    + added Upstream-Contact and Source
+  * debian/control:
+    + added node-buffer-crc32 to depens
+    + bump Standards-Version to 3.9.5
+    + added Leo Iannacone to uploaders
+    + set pkg-javascript in Vcs-* instead of collab-maint
+
+ -- Leo Iannacone <l3on@ubuntu.com>  Sun, 27 Apr 2014 13:25:01 +0200
+
+node-send (0.1.4-1) unstable; urgency=low
+
+  * Initial release (Closes: #728016)
+
+ -- Jérémy Lal <kapouer@melix.org>  Sun, 27 Oct 2013 17:49:17 +0100
