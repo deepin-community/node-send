@@ -1,3 +1,18 @@
+1.2.0 / 2022-03-20
+==================
+
+  * Add `suppress` argument
+
+1.1.1 / 2022-02-28
+==================
+
+  * Work around Zlib close bug in Node.js < 4.5.5
+
+1.1.0 / 2022-01-25
+==================
+
+  * Add Zlib steam support and Node.js leak work around
+
 1.0.4 / 2016-01-15
 ==================
 

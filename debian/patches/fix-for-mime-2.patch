@@ -1,0 +1,45 @@
+Description: fix for mime 2
+ Object mime.charsets was removed
+Author: Yadd <yadd@debian.org>
+Forwarded: no
+Last-Update: 2022-03-25
+
+--- a/index.js
++++ b/index.js
+@@ -827,17 +827,15 @@
+ 
+   if (res.getHeader('Content-Type')) return
+ 
+-  var type = mime.lookup(path)
++  var type = mime.getType(path.replace(/^.*\./,''))
+ 
+   if (!type) {
+     debug('no content-type')
+     return
+   }
+ 
+-  var charset = mime.charsets.lookup(type)
+-
+   debug('content-type %s', type)
+-  res.setHeader('Content-Type', type + (charset ? '; charset=' + charset : ''))
++  res.setHeader('Content-Type', type)
+ }
+ 
+ /**
+--- a/test/send.js
++++ b/test/send.js
+@@ -147,12 +147,12 @@
+   it('should set Content-Type via mime map', function (done) {
+     request(app)
+       .get('/name.txt')
+-      .expect('Content-Type', 'text/plain; charset=UTF-8')
++      .expect('Content-Type', 'text/plain')
+       .expect(200, function (err) {
+         if (err) return done(err)
+         request(app)
+           .get('/tobi.html')
+-          .expect('Content-Type', 'text/html; charset=UTF-8')
++          .expect('Content-Type', 'text/html')
+           .expect(200, done)
+       })
+   })
